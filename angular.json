@@ -3,5 +3,99 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "gerenciador-funcionario": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/gerenciador-funcionario",
+      "sourceRoot": "projects/gerenciador-funcionario/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/gerenciador-funcionario",
+            "index": "projects/gerenciador-funcionario/src/index.html",
+            "main": "projects/gerenciador-funcionario/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/gerenciador-funcionario/tsconfig.app.json",
+            "assets": [
+              "projects/gerenciador-funcionario/src/favicon.ico",
+              "projects/gerenciador-funcionario/src/assets"
+            ],
+            "styles": [
+              "projects/gerenciador-funcionario/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "gerenciador-funcionario:build:production"
+            },
+            "development": {
+              "browserTarget": "gerenciador-funcionario:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "gerenciador-funcionario:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/gerenciador-funcionario/tsconfig.spec.json",
+            "assets": [
+              "projects/gerenciador-funcionario/src/favicon.ico",
+              "projects/gerenciador-funcionario/src/assets"
+            ],
+            "styles": [
+              "projects/gerenciador-funcionario/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "8e496fc2-9c6e-46d6-87ef-4fc339b0a920"
   }
 }
