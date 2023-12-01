@@ -1,0 +1,33 @@
+.container-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    display: flex;
+  }
+  
+  .text-logo {
+    font-size: 60px;
+  }
+  
+  @media screen and (max-width: 450px) {
+    .text-logo {
+      font-size: 50px;
+    }
+  }
+  
+  @media screen and (max-width: 380px) {
+    .container-logo {
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .text-logo-one-part {
+    color: #4E41F0;
+  }
+  
+  .text-logo-two-part {
+    color: #E4E7FC;
+  }
