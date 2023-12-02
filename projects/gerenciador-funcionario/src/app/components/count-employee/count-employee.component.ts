@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-count-employee',
@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./count-employee.component.css']
 })
 export class CountEmployeeComponent {
-  quantidadeFuncionariosCadastrados: number;
+  @Input()qtEmployees: number;
   constructor() {
-    this.quantidadeFuncionariosCadastrados = 0;
+    this.qtEmployees = 0;
   }
 
   ngOnInit(): void {
