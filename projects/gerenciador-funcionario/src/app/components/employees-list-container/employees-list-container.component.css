@@ -1,0 +1,6 @@
+.employees-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 8px;
+  }
