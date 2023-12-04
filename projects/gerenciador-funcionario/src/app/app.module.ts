@@ -10,6 +10,13 @@ import { CountEmployeeComponent } from './components/count-employee/count-employ
 import { EmployeesComponent } from './pages/employees/employees.component';
 import { EmployeesFormComponent } from './pages/employees-form/employees-form.component';
 import { EmployeesListContainerComponent } from './components/employees-list-container/employees-list-container.component';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +27,20 @@ import { EmployeesListContainerComponent } from './components/employees-list-con
     EmployeesComponent,
     EmployeesFormComponent,
     EmployeesListContainerComponent,
-    SubHeaderComponent
+    SubHeaderComponent,
+    DialogComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    AppRoutingModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

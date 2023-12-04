@@ -1,1 +1,75 @@
-<button type="button" mat-button class="btn-register" [routerLink]="['/employees']">Voltar</button>
+<div class="body-container">
+    <form id="form-employes" #form="ngForm" (submit)="onSubmit()">
+      <div class="container-form-groups">
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label> Identificador</mat-label>
+            <input matInput placeholder="Identificador" id="input-identificador" name="input-identificador" type="text"
+              [(ngModel)]="this.employe.identificador" #identificador="ngModel" disabled>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Status</mat-label>
+            <mat-select [(value)]="this.employe.status" matInput placeholder="Status" requireds>
+              <mat-option value="ativo">Ativo</mat-option>
+              <mat-option value="inativo">Inativo</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+  
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Nome Funcionario</mat-label>
+            <input id="input-nome" name="input-nome" type="text"
+              #nome="ngModel" matInput minlength="3" maxlength="255" placeholder="Nome Funcionario" [(ngModel)]="this.employe.nome" required>
+            <mat-error *ngIf="nome.invalid">Nome inválido</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Data de Nascimento</mat-label>
+            <input minlength="3" id="input-data-nascimento" name="input-data-nascimento" type="date" #dataNascimento="ngModel" matInput placeholder="Data de Nascimento"
+              [(ngModel)]="this.employe.dataNascimento" required>
+            <mat-error *ngIf="dataNascimento.invalid">Data Nascimento inválida</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>CPF</mat-label>
+            <input mask="000.000.000-00" id="input-cpf" name="input-cpf" type="text" #cpf="ngModel" matInput
+              placeholder="CPF" [(ngModel)]="this.employe.cpf" required>
+            <mat-error *ngIf="cpf.invalid">Marca inválida</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Cargo</mat-label>
+            <input minlength="1" id="input-modelo" name="input-modelo" type="text" #cargo="ngModel" matInput
+              placeholder="Cargo" [(ngModel)]="this.employe.cargo" required>
+            <mat-error *ngIf="cargo.invalid">Modelo inválida</mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Data Admissão</mat-label>
+            <input minlength="3" id="input-data-admissao" name="input-data-admissao" type="date" #dataAdmissao="ngModel" matInput placeholder="Data de Admissão"
+            [(ngModel)]="this.employe.dataAdmissao" required>
+          <mat-error *ngIf="dataAdmissao.invalid">Data Admissao inválida</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Data Demissão</mat-label>
+            <input minlength="3" id="input-data-demissao" name="input-data-demissao" type="date" #dataDemissao="ngModel" matInput placeholder="Data de Demissão"
+            [(ngModel)]="this.employe.dataDemissao">
+            <mat-error *ngIf="dataDemissao.invalid">Km inválido</mat-error>
+          </mat-form-field>
+        </div>
+
+      </div> 
+  
+      <div class="form-group-button">
+        <div class="wrapper-buttons">
+          <button mat-raised-button class="btn-salvar" [disabled]="!form.valid" type="submit">Salvar</button>
+          <button mat-raised-button class="btn-cancelar" type="button" (click)="handleCancel()">Cancelar</button>
+        </div>
+      </div>
+    </form>
+  </div>
