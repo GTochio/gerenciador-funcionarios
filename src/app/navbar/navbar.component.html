@@ -1,0 +1,15 @@
+<nav class="navbar">
+    <div class="container">
+        <div class="grid">
+            <div class="col-12">
+            <a href="javascript:;" class="navbar-menu" (click)="showMenu = !showMenu"><i class="pi pi-bars"></i></a>    
+            </div>
+        </div>        
+    </div>
+
+    <ul class="navbar-options" [hidden]="!showMenu">
+        <li class="navbar-user"><a href="javascript:;" (click)="showMenu = !showMenu">Usuário</a></li>
+        <li class="navbar-menuitem"><a href="#">Departamentos</a></li>
+        <li class="navbar-menuitem"><a href="#">Funcionarios</a></li>
+    </ul>
+</nav> 
